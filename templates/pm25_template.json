@@ -187,8 +187,14 @@
     "unitText": "micrograms/cubic meter",
     "minValue": 0.00,
     "maxValue": 82.91,
-    "startDate": "1998-01-01",
-    "endDate": "1998-12-31"
+    additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "referenceYear",
+      "value": 1998
+    }
+  ]
+   
   },
   {
     "@type": "PropertyValue",
@@ -200,8 +206,12 @@
     "unitText": "micrograms/cubic meter",
     "minValue": 0.00,
     "maxValue": 77.47,
-    "startDate": "1999-01-01",
-    "endDate": "1999-12-31"
+    "valueReference": {
+    "@type": "PropertyValue",
+    "name": "referenceYear",
+    "value": "1999",
+    "valueReference": "http://www.wikidata.org/entity/Q25245" 
+  }
   },
   {
     "@type": "PropertyValue",
