@@ -4,7 +4,6 @@ This repository contains draft JSON-LD templates for FAIR-compliant and Science-
 
 Templates currently included:
 - Copernicus temperature raster example
-- SVI tabular example
 - PM2.5 geospatial example
 
 GitHub Pages site: https://daakiv.github.io/jsonld-templates/
