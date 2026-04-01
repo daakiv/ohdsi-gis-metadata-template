@@ -1,1 +1,168 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "@language": "en",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "pato": "http://purl.obolibrary.org/obo/PATO_",
+    "stato": "http://purl.obolibrary.org/obo/stato.owl#"
+  },
+  "@type": "Dataset",
+  "@id": "https://gdsc.idsc.miami.edu/detail/global_pm25_concentration_1998_2016",
+  
+  "name": "Annual PM2.5 Concentrations for Countries and Urban Areas, v1 (1998–2016)",
+  "description": "The Annual PM2.5 Concentrations for Countries and Urban Areas, 1998-2016, consists of mean concentrations of particulate matter (PM2.5) for countries and urban areas derived from Global Annual PM2.5 Grids.",
+  "url": "https://ciesin.climate.columbia.edu/content/data",
+  
+  "datePublished": "2021-04-06",
+  "dateModified": "2021-04-06",
+  "version": "2026-03-19",
 
+  "license": {
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "isAccessibleForFree": true,
+
+  "creator": [
+    {
+      "@type": "Organization",
+      "name": "Center for International Earth Science Information Network (CIESIN)"
+    },
+    {
+      "@type": "Organization",
+      "name": "Columbia University"
+    }
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "Geospatial Digital Special Collections (GDSC), University of Miami"
+  },
+
+  "includedInDataCatalog": [
+    {
+      "@type": "DataCatalog",
+      "@id": "https://gdsc.idsc.miami.edu",
+      "name": "Geospatial Digital Special Collections",
+      "url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes",
+      "name": "mdc-health-outcomes",
+      "url": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes"
+    }
+  ],
+
+  "keywords": ["Global", "PM 2.5", "Air Quality", "Vector", "Urban Areas"],
+
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "dataRepresentation",
+      "value": "vector",
+      "description": "Indicates the primary spatial data model."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "vectorGeometry",
+      "value": "multipolygon"
+    }
+  ],
+
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Global",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "-54.858002 -176.733337 78.274611 179.458313"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Spatial Reference System",
+        "propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+        "value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+      }
+    ]
+  },
+
+  "temporalCoverage": "1998-01-01/2016-12-31",
+
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "PostgreSQL Dump",
+      "contentUrl": "https://gdsc.idsc.miami.edu/download/data/global_pm25_concentration_1998_2016/?file=global_pm25_concentration_1998_2016&format=sql",
+      "encodingFormat": "application/sql",
+      "description": "SQL dump for database restoration and querying.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "canonicalRepresentation",
+          "value": "wide"
+        }
+      ]
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Shapefile Distribution",
+      "contentUrl": "https://gdsc.idsc.miami.edu/download/data/global_pm25_concentration_1998_2016/?file=global_pm25_concentration_1998_2016&format=shp",
+      "encodingFormat": "application/x-esri-shapefile"
+    }
+  ],
+
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "urbid",
+      "description": "Code of the urban extent polygons",
+      "additionalType": "xsd:integer"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "sqkm",
+      "description": "Area of the urban extent polygon",
+      "additionalType": "xsd:float",
+      "unitText": "square kilometers",
+      "unitCode": "http://qudt.org/vocab/unit/KiloM2"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "avpmu_1998",
+      "description": "Average annual PM2.5 concentration for 1998",
+      "propertyID": "http://purl.obolibrary.org/obo/PATO_0001025",
+      "additionalType": "xsd:float",
+      "unitCode": "http://qudt.org/vocab/unit/MicroGM-PER-M3",
+      "unitText": "micrograms/cubic meter",
+      "minValue": 0.00,
+      "maxValue": 82.91
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "avpmu_1999",
+      "description": "Average annual PM2.5 concentration for 1999",
+      "propertyID": "http://purl.obolibrary.org/obo/PATO_0001025",
+      "additionalType": "xsd:float",
+      "unitCode": "http://qudt.org/vocab/unit/MicroGM-PER-M3",
+      "unitText": "micrograms/cubic meter",
+      "minValue": 0.00,
+      "maxValue": 77.47
+    }
+  ],
+
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Global Annual PM2.5 Grids from MODIS, MISR and SeaWiFS",
+    "url": "https://ciesin.climate.columbia.edu/content/data"
+  },
+
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "GDSC ETL Tools",
+    "description": "Pipeline scripts detailing the data retrieval (wget) and processing workflow.",
+    "codeRepository": "https://github.com/Geospatial-Digital-Special-Collections/tools"
+  }
+}
