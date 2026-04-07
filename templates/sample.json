@@ -1,1 +1,69 @@
-
+"variableMeasured": [
+  {
+    "@type": "PropertyValue",
+    "name": "RasterLocation",
+    "propertyID": "http://www.opengis.net/def/property/OGC/0/SamplingLocation",
+    "qudt:dataType": "http://qudt.org/schema/qudt/StructuredDataType",
+    "alternateName": "Raster grid location",
+    "description": "Structured location for the raster grid and its associated pixel attributes.",
+    "valueReference": [
+      {
+        "@type": "PropertyValue",
+        "name": "geoType",
+        "value": "boundingBox",
+        "qudt:dataType": "https://schema.org/Text"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "boundingBox",
+        "value": "-12.125 28.875 -0.875 41.125",
+        "qudt:dataType": "https://schema.org/Text"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "resolution",
+        "value": 0.25,
+        "unitText": "decimal degrees",
+        "qudt:dataType": "https://schema.org/Number"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "geocr:pixel_value",
+        "description": "Attributes associated with the raster pixel location (Bands).",
+        "valueReference": [
+          {
+            "@type": "PropertyValue",
+            "name": "administrativeDistrict",
+            "value": "Magu HDSS",
+            "qudt:dataType": "xsd:string"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "landCoverClass",
+            "value": "farmland",
+            "qudt:dataType": "xsd:string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@type": "PropertyValue",
+    "name": "2m_temperature",
+    "description": "The actual measurement/observation value.",
+    "propertyID": "pato:0000146",
+    "unitCode": "unit:K",
+    "minValue": 287.315857,
+    "maxValue": 301.010986,
+    "unitText": "Kelvin",
+    "measurementTechnique": "Model Output",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "statistic",
+        "value": "average",
+        "propertyID": "stato:0000574"
+      }
+    ]
+  }
+]
