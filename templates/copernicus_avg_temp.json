@@ -28,22 +28,10 @@
   "dateModified": "2026-02-12",
   "license": "http://opendatacommons.org/licenses/by/1.0/",
   "isAccessibleForFree": true,
-
   "hasPart": [
-    {
-      "@type": "DigitalDocument",
-      "name": "workflow.md",
-      "encodingFormat": "text/markdown",
-      "url": "https://github.com/Geospatial-Digital-Special-Collections/data/blob/main/tz_temp/workflow.md"
-    },
-    {
-      "@type": "DigitalDocument",
-      "name": "agents.md",
-      "encodingFormat": "text/markdown",
-      "url": "https://github.com/OHDSI/gaiaCatalog/blob/main/AGENTS.md"
-    }
+    { "@type": "DigitalDocument", "name": "workflow.md", "encodingFormat": "text/markdown", "url": "https://github.com/Geospatial-Digital-Special-Collections/data/blob/main/tz_temp/workflow.md" },
+    { "@type": "DigitalDocument", "name": "agents.md", "encodingFormat": "text/markdown", "url": "https://github.com/OHDSI/gaiaCatalog/blob/main/AGENTS.md" }
   ],
-
   "about": [
     {
       "@type": "Event",
@@ -73,7 +61,6 @@
       }
     }
   ],
-
   "creator": [
     {
       "@type": "Role",
@@ -81,12 +68,10 @@
       "creator": {
         "@type": "Organization",
         "@id": "https://ror.org/00yafkq43",
-        "sameAs": "https://ror.org/00yafkq43",
         "name": "Copernicus Climate Change Service"
       }
     }
   ],
-
   "provider": [
     {
       "@type": "Organization",
@@ -95,89 +80,45 @@
       "url": "https://gdsc.idsc.miami.edu"
     }
   ],
-
-  "includedInDataCatalog": [
-    {
-      "@type": "DataCatalog",
-      "@id": "https://gdsc.idsc.miami.edu",
-      "name": "Geospatial Digital Special Collections"
-    },
-    {
-      "@type": "DataCatalog",
-      "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
-      "name": "tz-climate-change"
-    }
-  ],
-
   "spatialCoverage": {
     "@type": "Place",
     "@id": "https://www.geonames.org/149590",
     "name": "Tanzania",
-    "geo": {
-      "@type": "GeoShape",
-      "box": "-12.125 28.875 -0.875 41.125"
-    },
+    "geo": { "@type": "GeoShape", "box": "-12.125 28.875 -0.875 41.125" },
     "additionalProperty": [
-      {
-        "@type": "PropertyValue",
-        "name": "Spatial Reference System",
-        "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "spatialResolution",
-        "value": 0.25,
-        "unitText": "decimal degrees"
-      }
+      { "@type": "PropertyValue", "name": "Spatial Reference System", "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84" },
+      { "@type": "PropertyValue", "name": "spatialResolution", "value": 0.25, "unitText": "decimal degrees" }
     ]
   },
-
   "temporalCoverage": "1984-01-01/1984-12-31",
-
   "distribution": {
     "@type": "DataDownload",
     "contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff",
     "encodingFormat": "image/tiff",
-    "additionalProperty": [
-      {
-        "@type": "PropertyValue",
-        "name": "canonicalRepresentation",
-        "value": "long",
-        "description": "Describes the data layout/shape of the file."
-      }
-    ],
+    "additionalProperty": [{ "@type": "PropertyValue", "name": "canonicalRepresentation", "value": "long", "description": "Describes the data layout/shape of the file." }],
     "keywords": {
       "@type": "DefinedTerm",
-      "description": "GIS Data Structure for Representation",
-      "inDefinedTermSet": {
-        "@type": "DefinedTermSet",
-        "name": "dataRepresentation",
-        "hasDefinedTerm": [
-          { "@type": "DefinedTerm", "termCode": "raster" },
-          { "@type": "DefinedTerm", "termCode": "vector" },
-          { "@type": "DefinedTerm", "termCode": "table" }
-        ]
-      },
+      "inDefinedTermSet": { "@type": "DefinedTermSet", "name": "dataRepresentation", "hasDefinedTerm": [{ "@type": "DefinedTerm", "termCode": "raster" }] },
       "termCode": "raster"
     }
   },
-
   "variableMeasured": [
     {
       "@type": "PropertyValue",
       "name": "RasterLocation",
-      "description": "Structured location anchor for the raster grid pixels.",
       "propertyID": "http://www.opengis.net/def/property/OGC/0/SamplingLocation",
+      "alternateName": "Raster grid location",
+      "description": "Structured location anchor for the raster grid pixels.",
       "qudt:dataType": "http://qudt.org/schema/qudt/StructuredDataType",
       "valueReference": [
-        { "@type": "PropertyValue", "name": "geoType", "value": "boundingBox", "description": "" },
-        { "@type": "PropertyValue", "name": "boundingBox", "value": "-12.125 28.875 -0.875 41.125", "description": "" },
-        { "@type": "PropertyValue", "name": "resolution", "value": 0.25, "unitText": "decimal degrees", "description": "" },
-        { "@type": "PropertyValue", "name": "projection", "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84", "description": "" },
+        { "@type": "PropertyValue", "name": "geoType", "value": "boundingBox", "description": "", "qudt:dataType": "xsd:string" },
+        { "@type": "PropertyValue", "name": "boundingBox", "value": "-12.125 28.875 -0.875 41.125", "description": "", "qudt:dataType": "xsd:string" },
+        { "@type": "PropertyValue", "name": "resolution", "value": 0.25, "unitText": "decimal degrees", "description": "", "qudt:dataType": "xsd:float" },
+        { "@type": "PropertyValue", "name": "projection", "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84", "description": "", "qudt:dataType": "xsd:string" },
         {
           "@type": "PropertyValue",
           "name": "geocr:pixel_value",
-          "description": "Temperature attribute bound to the pixel grid.",
+          "description": "The specific air temperature attribute bound to this spatial grid.",
           "valueReference": [
             {
               "@type": "PropertyValue",
@@ -189,12 +130,27 @@
               "maxValue": 301.010986,
               "unitCode": "unit:K",
               "unitText": "Kelvin",
+              "measurementTechnique": "Model Output",
               "stato:statistic": "stato:0000574",
-              "measurementTechnique": "Model Output"
+              "additionalProperty": [
+                { "@type": "PropertyValue", "name": "statistic", "value": "average", "propertyID": "stato:0000574", "description": "The statistical method used for temporal aggregation." }
+              ]
             }
           ]
         }
       ]
     }
-  ]
+  ],
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Copernicus ERA5-Land",
+    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land"
+  },
+  "subjectOf": {
+    "@type": "DataDownload",
+    "name": "Raster processing workflow",
+    "description": "Workflow documentation describing processing from ERA5-Land source data to the Tanzania subset.",
+    "encodingFormat": "text/markdown",
+    "contentUrl": "https://github.com/Geospatial-Digital-Special-Collections/data/blob/main/tz_temp/workflow.md"
+  }
 }
