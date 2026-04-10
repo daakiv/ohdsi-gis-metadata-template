@@ -1,41 +1,78 @@
 {
   "@context": {
-    "@vocab": "https://schema.org/",
     "@language": "en",
+    "@vocab": "https://schema.org/",
     "dct": "http://purl.org/dc/terms/",
     "qudt": "http://qudt.org/schema/qudt/",
     "quantitykind": "http://qudt.org/vocab/quantitykind/",
     "unit": "http://qudt.org/vocab/unit/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "geocr": "http://mlcommons.org/croissant/geocr/",
+    "cr": "http://mlcommons.org/croissant/",
     "pato": "http://purl.obolibrary.org/obo/PATO_",
     "stato": "http://purl.obolibrary.org/obo/stato.owl#"
- 
   },
   "@type": "Dataset",
   "@id": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp",
-
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "https://registry.identifiers.org/registry/doi",
-    "value": "doi:10.XXXX/YYYY", 
-    "url": "https://doi.org/10.XXXX/YYYY" 
+    "value": "doi:10.XXXX/YYYY",
+    "url": "https://doi.org/10.XXXX/YYYY"
   },
-
   "name": "1984 Tanzania 2m Temperature Yearly Average (Copernicus)",
   "description": "A raster dataset containing the yearly average air temperature at 2 meters above the surface for Tanzania in 1984, derived from the Copernicus ERA5-Land reanalysis dataset.",
   "url": "https://gdsc.idsc.miami.edu/detail/tz_1984_copernicus_avg_temp",
-  "sameAs": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
-
-  "datePublished": "2025-06-01",
-  "dateModified": "2025-06-01",
   "version": "2026-02-12",
-
-  "license": {
-    "@type": "CreativeWork",
-    "name": "Open Data Commons Attribution License (ODC-By) Version 1.0",
-    "url": "http://opendatacommons.org/licenses/by/1.0/"
-  },
+  "datePublished": "2025-06-01",
+  "dateModified": "2026-02-12",
+  "license": "http://opendatacommons.org/licenses/by/1.0/",
   "isAccessibleForFree": true,
+
+  "hasPart": [
+    {
+      "@type": "DigitalDocument",
+      "name": "workflow.md",
+      "encodingFormat": "text/markdown",
+      "url": "https://github.com/Geospatial-Digital-Special-Collections/data/blob/main/tz_temp/workflow.md"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "agents.md",
+      "encodingFormat": "text/markdown",
+      "url": "https://github.com/OHDSI/gaiaCatalog/blob/main/AGENTS.md"
+    }
+  ],
+
+  "about": [
+    {
+      "@type": "Event",
+      "name": "Raster processing workflow for 1984 Tanzania Temperature",
+      "description": "Spatial subsetting and temporal averaging from ERA5-Land global reanalysis",
+      "potentialAction": {
+        "@type": "Action",
+        "name": "subset and average",
+        "description": "Processing of raw Copernicus GRIB/NetCDF data into Tanzania GeoTIFF",
+        "object": {
+          "@type": "Dataset",
+          "name": "Copernicus ERA5-Land Reanalysis",
+          "producer": "Copernicus Climate Change Service",
+          "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land"
+        },
+        "instrument": {
+          "@type": "SoftwareApplication",
+          "@id": "https://github.com/Geospatial-Digital-Special-Collections/tools",
+          "name": "GDSC Raster Tools",
+          "downloadUrl": "https://github.com/Geospatial-Digital-Special-Collections/tools.git"
+        },
+        "result": {
+          "@type": "Dataset",
+          "name": "1984 Tanzania 2m Temperature Yearly Average",
+          "url": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff"
+        }
+      }
+    }
+  ],
 
   "creator": [
     {
@@ -54,7 +91,6 @@
     {
       "@type": "Organization",
       "@id": "https://ror.org/02y3ad647",
-      "sameAs": "https://ror.org/02y3ad647",
       "name": "Geospatial Digital Special Collections (GDSC), University of Miami",
       "url": "https://gdsc.idsc.miami.edu"
     }
@@ -64,30 +100,16 @@
     {
       "@type": "DataCatalog",
       "@id": "https://gdsc.idsc.miami.edu",
-      "name": "Geospatial Digital Special Collections",
-      "url": "https://gdsc.idsc.miami.edu"
+      "name": "Geospatial Digital Special Collections"
     },
     {
       "@type": "DataCatalog",
       "@id": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change",
-      "name": "tz-climate-change",
-      "url": "https://gdsc.idsc.miami.edu/?collection=tz-climate-change"
+      "name": "tz-climate-change"
     }
   ],
 
- "keywords": ["Tanzania", "temperature", "Copernicus", "ERA5-Land", "climate", "raster"],
-
- "additionalProperty":[
-  {
-      "@type": "PropertyValue",
-      "name": "aggregationPeriod",
-      "value": "P1Y",
-      "description": "The temporal aggregation period (Yearly)."
-    }
-
- ],
-
- "spatialCoverage": {
+  "spatialCoverage": {
     "@type": "Place",
     "@id": "https://www.geonames.org/149590",
     "name": "Tanzania",
@@ -95,11 +117,10 @@
       "@type": "GeoShape",
       "box": "-12.125 28.875 -0.875 41.125"
     },
-   "additionalProperty": [
+    "additionalProperty": [
       {
         "@type": "PropertyValue",
         "name": "Spatial Reference System",
-        "propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
         "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
       },
       {
@@ -109,105 +130,71 @@
         "unitText": "decimal degrees"
       }
     ]
-    
   },
 
   "temporalCoverage": "1984-01-01/1984-12-31",
 
- "distribution": [
+  "distribution": {
+    "@type": "DataDownload",
+    "contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff",
+    "encodingFormat": "image/tiff",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "canonicalRepresentation",
+        "value": "long",
+        "description": "Describes the data layout/shape of the file."
+      }
+    ],
+    "keywords": {
+      "@type": "DefinedTerm",
+      "description": "GIS Data Structure for Representation",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "dataRepresentation",
+        "hasDefinedTerm": [
+          { "@type": "DefinedTerm", "termCode": "raster" },
+          { "@type": "DefinedTerm", "termCode": "vector" },
+          { "@type": "DefinedTerm", "termCode": "table" }
+        ]
+      },
+      "termCode": "raster"
+    }
+  },
+
+  "variableMeasured": [
     {
-      "@type": "DataDownload",
-      "@id": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff",
-      "contentUrl": "https://gdsc.idsc.miami.edu/download/data/tz_1984_copernicus_avg_temp/?file=tz_1984_copernicus_avg_temp&format=tiff",
-      "encodingFormat": "image/tiff",
-      "additionalType": "http://edamontology.org/format_3591",
-      "description": "GeoTIFF download of the 1984 yearly average 2m temperature for Tanzania.",
-      "additionalProperty": [
+      "@type": "PropertyValue",
+      "name": "RasterLocation",
+      "description": "Structured location anchor for the raster grid pixels.",
+      "propertyID": "http://www.opengis.net/def/property/OGC/0/SamplingLocation",
+      "qudt:dataType": "http://qudt.org/schema/qudt/StructuredDataType",
+      "valueReference": [
+        { "@type": "PropertyValue", "name": "geoType", "value": "boundingBox", "description": "" },
+        { "@type": "PropertyValue", "name": "boundingBox", "value": "-12.125 28.875 -0.875 41.125", "description": "" },
+        { "@type": "PropertyValue", "name": "resolution", "value": 0.25, "unitText": "decimal degrees", "description": "" },
+        { "@type": "PropertyValue", "name": "projection", "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84", "description": "" },
         {
           "@type": "PropertyValue",
-          "name": "canonicalRepresentation",
-          "value": "long",
-          "description": "Describes the data layout/shape of the file."
+          "name": "geocr:pixel_value",
+          "description": "Temperature attribute bound to the pixel grid.",
+          "valueReference": [
+            {
+              "@type": "PropertyValue",
+              "name": "2m_temperature",
+              "description": "Air temperature at 2 meters above surface",
+              "propertyID": "pato:0000146",
+              "qudt:dataType": "xsd:float",
+              "minValue": 287.315857,
+              "maxValue": 301.010986,
+              "unitCode": "unit:K",
+              "unitText": "Kelvin",
+              "stato:statistic": "stato:0000574",
+              "measurementTechnique": "Model Output"
+            }
+          ]
         }
       ]
     }
-  ],
-
-"variableMeasured": [
-  {
-    "@type": "PropertyValue",
-    "name": "RasterLocation",
-    "propertyID": "http://www.opengis.net/def/property/OGC/0/SamplingLocation",
-    "alternateName": "Raster grid location",
-    "description": "Structured location for the raster grid and its associated pixel attributes.",
-    "qudt:dataType": "http://qudt.org/schema/qudt/StructuredDataType",
-    "valueReference": [
-      {
-        "@type": "PropertyValue",
-        "name": "geoType",
-        "value": "boundingBox",
-        "qudt:dataType": "https://schema.org/Text"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "boundingBox",
-        "value": "-12.125 28.875 -0.875 41.125",
-        "qudt:dataType": "https://schema.org/Text"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "resolution",
-        "value": 0.25,
-        "unitText": "decimal degrees",
-        "qudt:dataType": "https://schema.org/Number"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "projection",
-        "value": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
-        "qudt:dataType": "https://schema.org/Text"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "geocr:pixel_value",
-        "description": "The specific air temperature attribute bound to this spatial grid.",
-        "valueReference": [
-          {
-            "@type": "PropertyValue",
-            "name": "2m_temperature",
-            "propertyID": "pato:0000146",
-            "minValue": 287.315857,
-            "maxValue": 301.010986,
-            "unitCode": "unit:K",
-            "unitText": "Kelvin",
-            "measurementTechnique": "Model Output",
-            "additionalProperty": [
-              {
-                "@type": "PropertyValue",
-                "name": "statistic",
-                "value": "average",
-                "propertyID": "stato:0000574"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-],
-    
-  "isBasedOn": {
-    "@type": "Dataset",
-    "name": "Copernicus ERA5-Land",
-    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land"
-  },
-
-  "subjectOf": {
-    "@type": "DataDownload",
-    "name": "Raster processing workflow",
-    "description": "Workflow documentation describing processing from ERA5-Land source data to the Tanzania subset.",
-    "encodingFormat": "text/markdown",
-    "contentUrl": "https://github.com/.../workflow.md"
-  }
+  ]
 }
-
