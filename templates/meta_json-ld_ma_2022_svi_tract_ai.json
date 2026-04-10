@@ -274,68 +274,9 @@
       "geocr:temporalRange": "2016-01-01/2020-12-31",
       "valueReference": {
         "@type": "DefinedTerm",
-        "name": "Universe",
-        "termCode": "persons"
+        "name": "Theme",
+        "termCode": "Household Characteristics"
       }
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "f_age17",
-      "description": "Flag - the percentage of persons aged 17 and younger is in the 90th percentile (1 = yes, 0 = no)",
-      "propertyID": "2052499366",
-      "qudt:dataType": "xsd:boolean",
-      "geocr:temporalRange": "2016-01-01/2020-12-31"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "f_theme1",
-      "description": "Sum of flags for Socioeconomic Status theme",
-      "propertyID": "2052497702",
-      "qudt:dataType": "xsd:integer",
-      "geocr:temporalRange": "2016-01-01/2020-12-31"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "m_afam",
-      "description": "Adjunct variable - Black/African American, not Hispanic or Latino persons estimate MOE, 2016-2020 ACS",
-      "propertyID": "2052499782",
-      "qudt:dataType": "xsd:float",
-      "unitText": "margin of error of estimate of Black/African American, not Hispanic or Latino persons",
-      "stato:statistic": "measurement accuracy as a percentage (moe)",
-      "measurementTechnique": "multiyear period estimation",
-      "geocr:temporalRange": "2016-01-01/2020-12-31",
-      "valueReference": {
-        "@type": "DefinedTerm",
-        "name": "Universe",
-        "termCode": "persons"
-      }
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "mp_age17",
-      "description": "Percentage of persons aged 17 and younger estimate MOE, 2016-2020 ACS",
-      "propertyID": "2052498381",
-      "qudt:dataType": "xsd:float",
-      "unitText": "moe",
-      "geocr:temporalRange": "2016-01-01/2020-12-31"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "rpl_themes",
-      "description": "Overall percentile ranking",
-      "propertyID": "2052498131",
-      "qudt:dataType": "xsd:float",
-      "unitText": "percentile",
-      "geocr:temporalRange": "2016-01-01/2020-12-31"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "spl_themes",
-      "description": "Sum of series themes",
-      "propertyID": "",
-      "qudt:dataType": "xsd:float",
-      "unitText": "svi index",
-      "geocr:temporalRange": "2016-01-01/2020-12-31"
     }
   ]
 }
