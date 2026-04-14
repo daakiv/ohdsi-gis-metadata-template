@@ -10,7 +10,7 @@ It provides JSON-LD templates that align with:
 
 ---
 
-## 🔗 Related Work
+## Related Work
 
 This work is part of the OHDSI GIS initiative:
 
@@ -18,7 +18,7 @@ https://github.com/orgs/OHDSI/projects/26/views/22?pane=issue&itemId=139343663&i
 
 ---
 
-## 🧠 Key Concept
+## Key Concept
 
 The template models datasets as a **table structure** using `variableMeasured`.
 
@@ -38,7 +38,7 @@ This aligns directly with:
 
 ---
 
-## 📦 Example Datasets
+## Example Datasets
 
 The template has been tested across multiple dataset types:
 
@@ -53,7 +53,7 @@ The template has been tested across multiple dataset types:
 
 ---
 
-## 🧩 Repository Structure
+## Repository Structure
 
 * `templates/` → JSON-LD metadata implementations
 * `images/` → conceptual architecture diagrams
@@ -62,7 +62,7 @@ The template has been tested across multiple dataset types:
 
 ---
 
-## 🧭 Conceptual Model
+## Conceptual Model
 
 The implementation follows the architecture shown in the diagrams:
 
@@ -122,7 +122,7 @@ It acts as a **structural blueprint** that enables transformation into:
 
 ---
 
-## 🚀 Why this matters
+## Why this matters
 
 This approach enables:
 
