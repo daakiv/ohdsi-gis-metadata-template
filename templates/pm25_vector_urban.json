@@ -115,6 +115,44 @@
       "url": "https://gdsc.idsc.miami.edu"
     }
   ],
+  "includedInDataCatalog": [
+    {
+      "@type": "DataCatalog",
+      "@id": "https://gdsc.idsc.miami.edu",
+      "name": "Geospatial Digital Special Collections",
+      "url": "https://gdsc.idsc.miami.edu"
+    },
+    {
+      "@type": "DataCatalog",
+      "name": "mdc-health-outcomes",
+      "@id": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes",
+      "url": "https://gdsc.idsc.miami.edu/?collection=mdc-health-outcomes"
+    }
+  ],
+  "measurementTechnique": [
+  {
+    "@type": "DefinedTerm",
+    "name": "GIS Data Structure",
+    "description": "Vector data structure for geospatial representation.",
+    "termCode": "vector",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "dataRepresentation",
+      "url": "https://gdsc.idsc.miami.edu/vocab/dataRepresentation" 
+    }
+  },
+  {
+    "@type": "DefinedTerm",
+    "name": "GIS Vector Geometry",
+    "description": "Multi-part area geometry (multipolygon).",
+    "termCode": "multipolygon",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "vectorGeometry",
+      "url": "https://gdsc.idsc.miami.edu/vocab/vectorGeometry"
+    }
+  }
+],
   "spatialCoverage": {
     "@type": "Place",
     "name": "Global urban and country administrative coverage",
