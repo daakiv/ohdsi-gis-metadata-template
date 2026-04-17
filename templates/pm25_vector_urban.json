@@ -211,7 +211,7 @@
         "@type": "PropertyValue",
         "name": "spatial_metadata",
         "valueReference": [
-          { "@type": "PropertyValue", "name": "geoType", "value": "polygon" },
+          { "@type": "PropertyValue", "name": "geoType", "value": "vector" },
           { "@type": "PropertyValue", "name": "projection", "value": "https://epsg.io/4326" },
           { "@type": "PropertyValue", "name": "resolution", "value": "0.01 degrees", "description": "Original grid resolution of the source PM2.5 data."},
           { "@type": "PropertyValue", "name": "geometry", "value": "WKT or GeoJSON multipolygon", "qudt:dataType": "xsd:string" }
