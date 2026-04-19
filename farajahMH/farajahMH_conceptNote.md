@@ -20,7 +20,7 @@ This structure is closely aligned with LOINC. LOINC is a common language (set of
 <br />
 In the data warehouse there are facts that corresponds to LOINC observations and measurements. And the different parts of a fully specified observation or measurement in LOINC above like "code", "component", "property", "time" and so forth largely correspond to the dimensions of the data warehouse.
 <br /><br />
-INSPIRE data warehouse development is led by Dorothy Mailosi with assistance from Jay Greenfield.
+INSPIRE data warehouse development is led by Dorothy Mailosi.
 
 ## Mental Health DataCatalog
 The Mental Heaith DataCatalog has several components:
