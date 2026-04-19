@@ -18,9 +18,17 @@ This structure is closely aligned with LOINC. LOINC is a common language (set of
 <br /><br />
 <img width="494" height="365" alt="image" src="https://github.com/user-attachments/assets/437992c2-e90f-4341-9187-004e5e437274" />
 <br />
-INSPIRE data warehouse development is led by Dorothy Mailosi.
+In the data warehouse there are facts that corresponds to LOINC observations and measurements. And the different parts of a fully specified observation or measurement in LOINC above like "code", "component", "property", "time" and so forth largely correspond to the dimensions of the data warehouse.
+<br /><br />
+INSPIRE data warehouse development is led by Dorothy Mailosi with assistance from Jay Greenfield.
 
-## Mental Health Data Catalog
+## Mental Health DataCatalog
+The Mental Heaith DataCatalog has several components:
+* The catalog itself is a schema.org DataCatalog which is a collection of one or more schema.org Datasets rendered in JSON-LD format.
+* The catalog has an authoring tool that generates the schema.org JSON-LD datasets that we draw from the data warehouse
+* Each dataset in the catalog includes a knowledgebase that a coding agent can use to create concepts in a OMOP CDM community vocabulary for the DAP "idioms of distress"
+* Each dataset in the catalog includes a knowledgebase that a coding agent can use to create observations, measurements and visit occurrences in an OMOP CDM instance using concepts from this community vocabulary as needed
+
 
 ## OMOP CDM Instance
 
