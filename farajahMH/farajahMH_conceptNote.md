@@ -26,8 +26,12 @@ INSPIRE data warehouse development is led by Dorothy Mailosi with assistance fro
 The Mental Heaith DataCatalog has several components:
 * The catalog itself is a schema.org DataCatalog which is a collection of one or more schema.org Datasets rendered in JSON-LD format.
 * The catalog has an authoring tool that generates the schema.org JSON-LD datasets that we draw from the data warehouse
-* Each dataset in the catalog includes a knowledgebase that a coding agent can use to create concepts in a OMOP CDM community vocabulary for the DAP "idioms of distress"
+* Each dataset in the catalog includes a knowledgebase that a coding agent can use to create concepts in a OMOP CDM community vocabulary for the DAP "idioms of distress" under the direction of clinical expertise and lived experience
 * Each dataset in the catalog includes a knowledgebase that a coding agent can use to create observations, measurements and visit occurrences in an OMOP CDM instance using concepts from this community vocabulary as needed
+
+A catalog with this functionality is not new. Parts of it have been developed already in another project the CODATA team is participating -- the OHDSI GIS WG. And the OHDSI GIS WG itself and its initiative called the gaiaCatalog has been guided by work started at the University of Miami. That being said, hosting a knowledgebase for AI agents is experimental and is still very much a work in progress. Success with agentic AI in these early times will take a significant effort.
+<br /><br />
+This being said, David Amadi will lead authoring and catalog entry generation except he will need support from the CODATA team (Doug and Letisha) when it comes to the parts of the catalog that an AI coding agent might use first to create concepts iteratively under the direction of clinical expertise and lived experience and then to populate measurments and observations in an OMOP CDM instance using these concepts.
 
 
 ## OMOP CDM Instance
