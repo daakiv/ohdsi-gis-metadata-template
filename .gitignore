@@ -1,0 +1,6 @@
+authoring/kobotoolbox/.env
+authoring/kobotoolbox/.env.*
+!authoring/kobotoolbox/.env.example
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
