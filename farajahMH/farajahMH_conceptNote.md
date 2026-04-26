@@ -3,7 +3,7 @@
 
 
 ## Overview
-The chatbot is the product of a workflow that begins with the INSPIRE data warehouse which hosts and links data from EHR records, population health studies and community conversational records between patients and community health workers. In the warehouse the conversations are transcribed, de-identified and annotated under the direction of clinicians and people with lived experience. In the process recordings are turned into observations that come tagged with concepts that together form a vocabulary of "idioms of distress". Next steps are taken by a schema.org JSON-LD DataCatalog through which warehouse (meta)data is projected into machine actionable Datasets that have the knowhow an open source AI coding agent uses to move these Datasets into an OMOP CDM instance. Here, using the OHDSI methods library (HADES), cohorts are constructed and features are extracted through which prediction models are discovered that relate distress signals and other observations (like SES and education) as well as covariates to depression, anxiety and psychosis (DAP) health outcomes over time. These models are stored for downstream use. Downstream the OMOP CDM instance is converted into one or more Croissant datasets by the MIT Croissant-baker. These Croissant datasets are used to fine tune a bespoke LLM with mental health knowledge on the HuggingFace and PyTorch platform. Feature selection during fine tuning is informed by the model(s) that the OHDSI methods library has built.
+The chatbot is the product of a workflow that begins with the INSPIRE data warehouse which hosts and links data from EHR records, population health studies and community conversational records between patients and community health workers. In the warehouse the conversations are transcribed, de-identified and annotated under the direction of clinicians and people with lived experience. In the process recordings are turned into observations that come tagged with concepts that together form a vocabulary of "idioms of distress". Next steps are taken by a schema.org JSON-LD DataCatalog through which warehouse (meta)data is projected into machine actionable Datasets that have the knowhow an open source AI coding agent uses to move these Datasets into an OMOP CDM instance. Here, using the OHDSI methods library (HADES), cohorts are constructed and features are extracted through which prediction models are discovered that relate distress signals and other observations (like SES and education) as well as covariates to depression, anxiety and psychosis (DAP) health outcomes over time. These models are stored for downstream use. Downstream the OMOP CDM instance is converted into one or more Croissant datasets by the MIT Croissant-baker. These Croissant datasets are used to fine tune a bespoke LLM with mental health knowledge on the Hugging Face and PyTorch platform. Feature selection during fine tuning is informed by the model(s) that the OHDSI methods library has built.
 
 _edited 4/25/2026_
 
@@ -63,10 +63,26 @@ Conversion of OMOP CDM instances into Croissant datasets by the MIT Croissant-ba
 <br /><br />
 Conversion of OMOP CDM instances into Croissant datasets is led by Slava Tykhonov.
 
-## Bespoke LLM Fine Tuning Using the Huggingface / PyTorch Platform
+## Bespoke LLM Fine Tuning Using the Hugging Face / PyTorch Platform
+_edited 4/26/2026_
+
+Croissant datasets provide, so to speak, "the keys to the castle". The castle we are entering using Croissant datasets is managed Hugging Face / PyTorch region-specific cloud storage for a workflow that goes from bespoke (Llama) LLM fine tuning aka training (using LoRA/QLoRA) to a dedicated inference endpoint that services end user prompts and their requests.
+
+Here is the workflow that runs across the platform:
+
+<img width="600" height="330" alt="image" src="https://github.com/user-attachments/assets/ab39aa85-3d1c-417f-b550-811ed9b2fa6d" />
+<br />
+And here is an iconic view of the platform itself:
+<br /><br />
+<img width="400" height="475" alt="image" src="https://github.com/user-attachments/assets/7f80a2f1-8c1c-421c-b94f-2bccbbd44366" />
  
 
 ## FarajaMH
+_edited 4/26/2026_
+
+FarajahMH is exposed to community health workers and their clients at the inference endpoint above. Here it is a tool they can use together with other guides including structured questionnaires, telemedicine, training protocols and traditional healers as needed to perform mental health services triage.
+
+Across the workflow and especially at its service / inference endpoint FarajaMH is private...
 
 
 
