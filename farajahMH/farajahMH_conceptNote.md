@@ -1,4 +1,4 @@
-# FarajahMH Workflow
+# FarajaMH Workflow
 <img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/df9e5b00-6dee-4177-af26-c15a2b5169a2" />
 
 
@@ -82,7 +82,7 @@ It includes the "Data Creators" which in our case is the MIT Croissant-baker whi
 ## FarajaMH
 _edited 4/26/2026_
 
-FarajahMH is exposed to community health workers and their clients at the inference endpoint above. Here it is a tool they can use together with other guides including structured questionnaires, telemedicine, training protocols and traditional healers as needed to perform mental health services triage.
+FarajaMH is exposed to community health workers and their clients at the inference endpoint above. Here it is a tool they can use together with other guides including structured questionnaires, telemedicine, training protocols and traditional healers as needed to perform mental health services triage.
 
 Across the workflow and especially at its service / inference endpoint FarajaMH is private...
 
