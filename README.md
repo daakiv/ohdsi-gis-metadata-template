@@ -137,5 +137,3 @@ This approach enables:
 
 David Amadi
 
-
-GitHub Pages site: https://daakiv.github.io/jsonld-templates/
