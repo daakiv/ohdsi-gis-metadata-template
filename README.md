@@ -44,12 +44,12 @@ The template has been tested across multiple dataset types:
 
 ### Vector datasets
 
-* Global PM2.5 concentrations (1998–2016)
-* Massachusetts CDC Social Vulnerability Index (SVI), 2020
+* [Global PM2.5 concentrations (1998–2016)](https://github.com/daakiv/ohdsi-gis-metadata-template/blob/main/templates/copernicus_raster_temperature.json)
+* [Massachusetts CDC Social Vulnerability Index (SVI), 2020](https://github.com/daakiv/ohdsi-gis-metadata-template/blob/main/templates/svi_vector_tract.json)
 
 ### Raster datasets
 
-* Tanzania 2m Temperature (Copernicus ERA5-Land, 1984–1985)
+* [Tanzania 2m Temperature (Copernicus ERA5-Land, 1984–1985)](https://github.com/daakiv/ohdsi-gis-metadata-template/blob/main/templates/copernicus_raster_temperature.json) is under review
 
 ---
 
