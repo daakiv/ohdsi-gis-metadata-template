@@ -1,0 +1,48 @@
+# curie_map:
+#   owl: http://www.w3.org/2002/07/owl#
+#   schema: https://schema.org/
+#   dct: http://purl.org/dc/terms/
+#   dcat: http://www.w3.org/ns/dcat#
+#   kobo: https://example.org/kobo/
+#   gdsc: https://gdsc.idsc.miami.edu/terms/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+#   ext: https://example.org/sssom-extensions/
+# extension_definitions:
+#   - slot_name: source_jsonpath
+#     property: ext:source_jsonpath
+#     type_hint: http://www.w3.org/2001/XMLSchema#string
+#   - slot_name: target_jsonpath
+#     property: ext:target_jsonpath
+#     type_hint: http://www.w3.org/2001/XMLSchema#string
+#   - slot_name: transform_rule
+#     property: ext:transform_rule
+#     type_hint: http://www.w3.org/2001/XMLSchema#string
+# mapping_set_id: https://example.org/mappings/kobo-record-136-to-schemaorg
+# mapping_set_title: Kobo Record 136 to Schema.org Dataset Mapping
+# mapping_set_description: SSSOM mapping from KoboToolbox record 136 raw JSON to Gaia Catalog JSON-LD.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+subject_id	predicate_id	object_id	mapping_justification	confidence	subject_label	object_label	subject_category	object_category	source_jsonpath	target_jsonpath	transform_rule	comment
+kobo:Dataset	skos:exactMatch	schema:Dataset	semapv:ManualMappingCuration	1.0	Kobo dataset record	Dataset	owl:Class	owl:Class	$.datasets[*]	$	create_dataset_object	Each Kobo submission becomes one Schema.org Dataset.
+kobo:title	skos:exactMatch	schema:name	semapv:ManualMappingCuration	1.0	Title	name	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/title']	$.name	string	Kobo title is the Schema.org Dataset name.
+kobo:description	skos:exactMatch	schema:description	semapv:ManualMappingCuration	1.0	Description	description	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/description']	$.description	string	Dataset abstract or description.
+kobo:doi	skos:exactMatch	schema:identifier	semapv:ManualMappingCuration	1.0	DOI	identifier	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/doi']	$.identifier	doi_to_uri_or_string	DOI is a formal dataset identifier.
+kobo:url	skos:exactMatch	schema:url	semapv:ManualMappingCuration	1.0	URL	url	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/url']	$.url	string	Dataset landing page URL.
+kobo:license	skos:exactMatch	schema:license	semapv:ManualMappingCuration	1.0	License	license	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/license']	$.license	license_code_to_uri	Kobo stores cc_by; target should use a full license URI where possible.
+kobo:language	skos:exactMatch	schema:inLanguage	semapv:ManualMappingCuration	1.0	Language	inLanguage	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/language']	$.inLanguage	string	Language code.
+kobo:publication_date	skos:exactMatch	schema:datePublished	semapv:ManualMappingCuration	1.0	Publication date	datePublished	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/publication_date']	$.datePublished	date	Publication date.
+kobo:last_updated	skos:exactMatch	schema:dateModified	semapv:ManualMappingCuration	1.0	Last updated	dateModified	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/last_updated']	$.dateModified	date	Last data update.
+kobo:creator_name	skos:closeMatch	schema:creator	semapv:ManualMappingCuration	0.9	Creator name	creator	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/creator_group'][*]['dublin_core_group/creator_group/creator_name']	$.creator	organization_array	Kobo has creator name as text; Schema.org creator should ideally be an Organization or Person object.
+kobo:publisher_name	skos:closeMatch	schema:publisher	semapv:ManualMappingCuration	0.85	Publisher name	publisher	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/publisher_group'][*]['dublin_core_group/publisher_group/publisher_name']	$.publisher	organization_array	Kobo has publisher name as text; Schema.org publisher should ideally be an Organization object.
+kobo:coverage_name	skos:closeMatch	schema:spatialCoverage	semapv:ManualMappingCuration	0.85	Coverage name	spatialCoverage	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/coverage_group'][*]['dublin_core_group/coverage_group/coverage_name']	$.spatialCoverage	place_array	Kobo has place name and GeoNames metadata; Schema.org spatialCoverage should ideally be a Place object.
+kobo:subject_terms	skos:closeMatch	schema:keywords	semapv:ManualMappingCuration	0.9	Subject terms	keywords	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['dublin_core_group/subject_group'][*]['dublin_core_group/subject_group/subject_term']	$.keywords	array	Subject terms are discoverability keywords.
+kobo:collections	skos:closeMatch	schema:includedInDataCatalog	semapv:ManualMappingCuration	0.8	Collections	includedInDataCatalog	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['collection_group/collections']	$.includedInDataCatalog	split_space_to_array	Kobo select_multiple returns a space-separated string.
+kobo:structure	skos:closeMatch	schema:additionalProperty	semapv:ManualMappingCuration	0.75	Structure	additionalProperty	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['iso_group/structure']	$.additionalProperty[*]	property_value:name=structure	Vector/table/raster structure; no perfect Schema.org direct field.
+kobo:geometry	skos:closeMatch	schema:additionalProperty	semapv:ManualMappingCuration	0.8	Geometry	additionalProperty	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['iso_group/geometry']	$.additionalProperty[*]	property_value:name=geometry	GIS geometry type.
+kobo:epsg	skos:closeMatch	schema:additionalProperty	semapv:ManualMappingCuration	0.8	EPSG	additionalProperty	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['iso_group/epsg']	$.additionalProperty[*]	property_value:name=epsg	Coordinate reference system code.
+kobo:source	skos:closeMatch	schema:contentUrl	semapv:ManualMappingCuration	0.9	Source URL	contentUrl	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/source']	$.distribution[0].contentUrl	string	Source download URL becomes Schema.org DataDownload contentUrl.
+kobo:table_name	skos:closeMatch	schema:additionalProperty	semapv:ManualMappingCuration	0.9	Table name	additionalProperty	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/table_name']	$.additionalProperty[*]	property_value:name=postgis_table	Gaia/PostGIS table name is operational metadata.
+kobo:extension	skos:closeMatch	schema:encodingFormat	semapv:ManualMappingCuration	0.85	Extension	encodingFormat	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/extension']	$.distribution[0].encodingFormat	extension_to_media_type_or_string	zip should become application/zip or remain as source extension.
+kobo:format	skos:closeMatch	schema:encodingFormat	semapv:ManualMappingCuration	0.8	Format	encodingFormat	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/format']	$.distribution[0].encodingFormat	format_to_media_type_or_string	shp describes the source data format.
+kobo:update_frequency	skos:exactMatch	dct:accrualPeriodicity	semapv:ManualMappingCuration	1.0	Update frequency	accrualPeriodicity	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['etl_group/update_frequency']	$['dct:accrualPeriodicity']	controlled_value	Update frequency maps to Dublin Core accrual periodicity.
+kobo:attributes	skos:closeMatch	schema:variableMeasured	semapv:ManualMappingCuration	0.85	Attributes	variableMeasured	owl:ObjectProperty	owl:ObjectProperty	$.datasets[*]['cartography_group/attributes_group'][*]	$.variableMeasured	attribute_objects	Each cartography attribute becomes a variableMeasured PropertyValue object.
