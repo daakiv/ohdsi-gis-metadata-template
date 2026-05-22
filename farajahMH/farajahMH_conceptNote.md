@@ -84,7 +84,7 @@ _edited 4/26/2026_
 
 FarajaMH is exposed to community health workers and their clients at the inference endpoint above. Here it is a tool they can use together with other guides including structured questionnaires, telemedicine, training protocols and traditional healers as needed to perform mental health services triage.
 
-Across the workflow and especially at its service / inference endpoint FarajaMH is private...
+Across the workflow and especially at its service / inference endpoint FarajaMH is private and can be hosted locally on a smartphone using a light weight Llama.
 
 More specifically, privacy depends on the region specific cloud storage data centers you can direct the Hugging Face / PyTorch platform to use. European cloud storage does privacy better than the United States because of the EU rules they operate under. But Africa is a future too:
 
