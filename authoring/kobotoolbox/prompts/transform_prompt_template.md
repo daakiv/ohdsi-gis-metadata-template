@@ -262,11 +262,17 @@ Place this above the column header row. Fill in the three `[FILL IN]` placeholde
 #   - slot_name: transform_rule
 #     property: ext:transform_rule
 #     type_hint: http://www.w3.org/2001/XMLSchema#string
-# mapping_set_id: https://example.org/mappings/[FILL IN — e.g. gaia_metadata_authoring_form_v2_record_136]
-# mapping_set_title: [FILL IN — e.g. GDSC Gaia Catalog KoboToolbox Form v2 to Schema.org JSON-LD]
-# mapping_set_description: [FILL IN — brief description of the dataset being mapped]
+# mapping_set_id: https://example.org/mappings/[FILL IN — e.g. gaia_metadata_authoring_form_v2_record_217]
+# mapping_set_title: "[FILL IN — always wrap in double quotes, e.g.: GDSC Gaia Catalog KoboToolbox Form v2 to Schema.org JSON-LD (Record 217: 1984 Tanzania 2m Temperature)]"
+# mapping_set_description: "[FILL IN — always wrap in double quotes. A colon, semicolon, or parenthesis in an unquoted YAML value will crash the parser.]"
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 ```
+
+> **⚠️ YAML string quoting rule — violations cause a hard crash in `parse_sssom`:**
+> - `mapping_set_title` and `mapping_set_description` **must always be wrapped in double quotes**
+> - Any value containing `: ` (colon-space), `;`, `(`, `)`, or `--` must be quoted
+> - Never use tab characters on header lines — YAML forbids them
+> - Quick test: if your value contains a colon anywhere, quote the whole value
 
 ---
 
@@ -357,6 +363,9 @@ Format:
 - [ ] comment column filled for every row
 - [ ] Validation Notes block present and counts reconcile
 - [ ] YAML header present if generating from scratch
+- [ ] mapping_set_title and mapping_set_description are wrapped in double quotes
+- [ ] No colon-space (: ), semicolon, or parenthesis in any unquoted YAML header value
+- [ ] No tab characters on any # header line
 - [ ] File saved as: sssom/gaia_metadata_authoring_form_v2_to_schemaorg.sssom.tsv
 - [ ] sssom_changelog.md updated with date and summary of changes
 ```
