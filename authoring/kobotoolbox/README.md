@@ -4,10 +4,12 @@ This folder documents the KoboToolbox/XLSForm-based metadata authoring workflow 
 
 The workflow supports the transition from a legacy spreadsheet-based metadata process into a more structured, reusable, and machine-actionable authoring approach. It uses:
 
-- **KoboToolbox** for structured metadata capture
-- **Raw Kobo JSON exports** as the source record
-- **SSSOM-style mapping files** for semantic transformation
-- **JSON-LD outputs** aligned with [Schema.org](https://schema.org) / [Science-on-Schema.org](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people) patterns
+- **KoboToolbox** for structured metadata capture and interface management.
+- **Raw Kobo JSON exports** as the source records.
+- **SSSOM-style mapping files** ([Simple Standard for Sharing Ontological Mappings](https://w3id.org/sssom)) for explicit semantic translation rules.
+- **JSON-LD outputs** strictly aligned with [Schema.org](https://schema.org) and [Science-on-Schema.org (SOSO)](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people) recommendations.
+
+---
 
 ---
 
@@ -23,14 +25,15 @@ The goal is to support consistent metadata capture across geospatial use cases �
 
 The previous workflow relied on manually maintained spreadsheet templates. The KoboToolbox-based workflow improves:
 
-| Aspect | Benefit |
-|---|---|
-| **Consistency** | Structured form fields reduce free-text variation |
-| **Validation** | Entry-time checks catch errors before export |
-| **Controlled vocabularies** | Dropdown and select responses enforce standard terms |
-| **Scalability** | Supports multiple contributors and dataset types |
-| **Interoperability** | Outputs align with JSON-LD / Schema.org standards |
-| **Traceability** | Clear chain from raw record → mapping → output |
+| Aspect                      | Benefit                                                                                                                |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Consistency**             | Structured form fields reduce free-text variation and improve metadata consistency.                                    |
+| **Validation**              | Entry-time checks help catch missing values, type errors, and required-field issues before export.                     |
+| **Controlled vocabularies** | Dropdown and select responses support the use of standardized terms and reduce ambiguity.                              |
+| **Scalability**             | The workflow supports metadata authoring by multiple contributors across different datasets and use cases.             |
+| **Interoperability**        | Raw Kobo metadata can be transformed into JSON-LD aligned with Schema.org and Science-on-Schema.org (`soso`) patterns. |
+| **Traceability**            | The workflow provides a clear chain from raw Kobo record → SSSOM mapping → generated JSON-LD output.                   |
+
 
 ---
 
