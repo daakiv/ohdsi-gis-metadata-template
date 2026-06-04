@@ -59,15 +59,19 @@ Gaia Catalog review and ingestion
 
 ## Main assets
 
-| Folder / file | Purpose |
-|---|---|
-| `docs/` | Workflow notes, architecture documentation, and concept notes |
-| `forms/` | KoboToolbox/XLSForm authoring templates and related form assets |
-| `prompts/` | AI prompt templates used to support SSSOM mapping generation and review |
-| `records/` | Raw Kobo records, generated outputs, and validation/comparison outputs |
-| `scripts/` | Python scripts for pulling Kobo records and transforming SSSOM mappings into JSON-LD |
-| `sssom/` | SSSOM-style TSV mapping files defining how Kobo JSON fields map to Schema.org / JSON-LD properties |
-| `.env.example` | Example configuration showing required environment variables (no secrets exposed) |
-| `README.md` | This document |
+> [!NOTE]
+> Each subfolder listed below contains its own `README.md` with more detailed technical notes, file conventions, and usage instructions.
 
-> Each subfolder contains its own `README.md` with further detail. For Science-on-Schema.org guidance on dataset roles, see the [official Dataset guide](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people).
+| Folder / file  | Purpose                                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `docs/`        | Workflow notes, architecture documentation, and concept notes describing the Gaia/GDSC catalog authoring approach. |
+| `forms/`       | KoboToolbox/XLSForm authoring templates and related form assets.                                                   |
+| `prompts/`     | AI prompt templates used to support SSSOM mapping generation, validation, and human review.                        |
+| `records/`     | Raw Kobo JSON records, generated JSON-LD outputs, and validation or comparison outputs.                            |
+| `scripts/`     | Python scripts for pulling Kobo records and transforming SSSOM mappings into JSON-LD.                              |
+| `sssom/`       | SSSOM-style TSV mapping files defining how Kobo JSON paths map to Schema.org / JSON-LD properties.                 |
+| `.env.example` | Example configuration showing required environment variables without exposing secrets.                             |
+| `README.md`    | This overview document.                                                                                            |
+
+
+> For Science-on-Schema.org guidance on dataset roles, see the [official Dataset guide](https://github.com/ESIPFed/science-on-schema.org/blob/main/guides/Dataset.md#roles-of-people).
